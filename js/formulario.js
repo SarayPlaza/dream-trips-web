@@ -1,100 +1,105 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('formContacto');
-    
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (validarFormulario()) {
-                alert('¡Formulario enviado correctamente! Nos pondremos en contacto pronto.');
-                form.reset();
-                limpiarErrores();
-            }
-        });
-    }
+    if (!form) return;
+
+    const nombre = document.getElementById('nombre');
+    const apellidos = document.getElementById('apellidos');
+    const email = document.getElementById('email');
+    const telefono = document.getElementById('telefono');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const okNombre = validarNombre();
+        const okApellidos = validarApellidos();
+        const okEmail = validarEmail();
+        const okTelefono = validarTelefono();
+
+        if (okNombre && okApellidos && okEmail && okTelefono) {
+            alert('¡Formulario enviado correctamente! Nos pondremos en contacto pronto.');
+            form.reset();
+            limpiarErrores();
+        }
+    });
+
+    form.addEventListener('reset', function () {
+        setTimeout(() => limpiarErrores(), 0);
+    });
+
+    nombre.addEventListener('input', validarNombre);
+    apellidos.addEventListener('input', validarApellidos);
+    email.addEventListener('input', validarEmail);
+    telefono.addEventListener('input', validarTelefono);
 });
 
-function validarFormulario() {
-    let esValido = true;
+function mostrarError(idError, mensaje) {
+    const el = document.getElementById(idError);
+    el.textContent = mensaje;
+    el.classList.add('show');
+}
 
-    // Validaciones: 
+function ocultarError(idError) {
+    const el = document.getElementById(idError);
+    el.textContent = '';
+    el.classList.remove('show');
+}
 
-
-    // nombre
-    
-    const nombre = document.getElementById('nombre').value.trim();
-    const errorNombre = document.getElementById('errorNombre');
-    
-    if (!nombre) {
-        errorNombre.textContent = 'El nombre es obligatorio.';
-        errorNombre.classList.add('show');
-        esValido = false;
-    } else if (!/^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{3,40}$/.test(nombre)) {
-        errorNombre.textContent = 'El nombre debe tener entre 3 y 40 caracteres y solo puede contener letras y espacios.';
-        errorNombre.classList.add('show');
-        esValido = false;
-    } else {
-        errorNombre.classList.remove('show');
+function validarNombre() {
+    const valor = document.getElementById('nombre').value.trim();
+    if (!valor) {
+        mostrarError('errorNombre', 'El nombre es obligatorio.');
+        return false;
     }
-
-    // apellidos:
-
-    const apellidos = document.getElementById('apellidos').value.trim();
-    const errorApellidos = document.getElementById('errorApellidos');
-    
-    if (!apellidos) {
-        errorApellidos.textContent = 'Los apellidos son obligatorios.';
-        errorApellidos.classList.add('show');
-        esValido = false;
-    } else if (!/^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{4,60}$/.test(apellidos)) {
-        errorApellidos.textContent = 'Los apellidos deben tener entre 4 y 60 caracteres y solo pueden contener letras y espacios.';
-        errorApellidos.classList.add('show');
-        esValido = false;
-    } else {
-        errorApellidos.classList.remove('show');
+    if (!/^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{3,40}$/.test(valor)) {
+        mostrarError('errorNombre', 'El nombre debe tener entre 3 y 40 caracteres y solo puede contener letras y espacios.');
+        return false;
     }
+    ocultarError('errorNombre');
+    return true;
+}
 
-    // mail
-
-    const email = document.getElementById('email').value.trim();
-    const errorEmail = document.getElementById('errorEmail');
-    
-    if (!email) {
-        errorEmail.textContent = 'El correo electrónico es obligatorio.';
-        errorEmail.classList.add('show');
-        esValido = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errorEmail.textContent = 'El correo debe cumplir con el patrón: usuario@dominio.xxx';
-        errorEmail.classList.add('show');
-        esValido = false;
-    } else {
-        errorEmail.classList.remove('show');
+function validarApellidos() {
+    const valor = document.getElementById('apellidos').value.trim();
+    if (!valor) {
+        mostrarError('errorApellidos', 'Los apellidos son obligatorios.');
+        return false;
     }
-
-    // telefono
-
-    const telefono = document.getElementById('telefono').value.trim();
-    const errorTelefono = document.getElementById('errorTelefono');
-    
-    if (!telefono) {
-        errorTelefono.textContent = 'El teléfono es obligatorio.';
-        errorTelefono.classList.add('show');
-        esValido = false;
-    } else if (!/^\d{9}$/.test(telefono)) {
-        errorTelefono.textContent = 'El teléfono debe contener exactamente 9 dígitos.';
-        errorTelefono.classList.add('show');
-        esValido = false;
-    } else {
-        errorTelefono.classList.remove('show');
+    if (!/^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{4,60}$/.test(valor)) {
+        mostrarError('errorApellidos', 'Los apellidos deben tener entre 4 y 60 caracteres y solo pueden contener letras y espacios.');
+        return false;
     }
+    ocultarError('errorApellidos');
+    return true;
+}
 
-    return esValido;
+function validarEmail() {
+    const valor = document.getElementById('email').value.trim();
+    if (!valor) {
+        mostrarError('errorEmail', 'El correo electrónico es obligatorio.');
+        return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor)) {
+        mostrarError('errorEmail', 'El correo debe cumplir con el patrón: usuario@dominio.xxx');
+        return false;
+    }
+    ocultarError('errorEmail');
+    return true;
+}
+
+function validarTelefono() {
+    const valor = document.getElementById('telefono').value.trim();
+    if (!valor) {
+        mostrarError('errorTelefono', 'El teléfono es obligatorio.');
+        return false;
+    }
+    if (!/^\d{9}$/.test(valor)) {
+        mostrarError('errorTelefono', 'El teléfono debe contener exactamente 9 dígitos.');
+        return false;
+    }
+    ocultarError('errorTelefono');
+    return true;
 }
 
 function limpiarErrores() {
-    const errores = document.querySelectorAll('.invalid-feedback');
-    errores.forEach(error => {
-        error.classList.remove('show');
-        error.textContent = '';
-    });
+    ['errorNombre', 'errorApellidos', 'errorEmail', 'errorTelefono'].forEach(ocultarError);
 }
