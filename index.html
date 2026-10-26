@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Trips - Agencia de Viajes</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-purple sticky-top">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="img/logo.png" alt="Logo Dream Trips" class="logo-navbar"> Dream Trips
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="carousel-section">
+
+            <div id="carouselDestinos" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="4"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/carrusel1.jpg" class="d-block w-100" alt="Brujas, Bélgica">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Brujas, Bélgica</h3>
+                            <p>La Venecia Belga</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/carrusel2.jpg" class="d-block w-100" alt="Venecia, Italia">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Venecia, Italia</h3>
+                            <p>Romance y arquitectura en cada rincón</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/carrusel3.jpg" class="d-block w-100" alt="Luxemburgo">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Luxemburgo</h3>
+                            <p>Castillos y vistas panorámicas inolvidables</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/carrusel4.jpg" class="d-block w-100" alt="Santorini, Grecia">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Santorini, Grecia</h3>
+                            <p>Atardeceres mágicos sobre el Mar Egeo</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/carrusel5.jpg" class="d-block w-100" alt="Hallstatt, Austria">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Hallstatt, Austria</h3>
+                            <p>Un pueblo de cuento de hadas en los Alpes</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestinos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDestinos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-section py-5">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                        <img src="img/nosotros.jpg" class="img-fluid rounded" alt="Dream Trips">
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="mb-3">Sobre Nosotros</h2>
+                        <p>En Dream Trips no vendemos viajes, creamos recuerdos que duran toda la vida. 
+                            Creemos que viajar es la mejor forma de coleccionar momentos inolvidables.</p>
+                        <p>Llevamos más de 15 años acompañando a viajeros apasionados a descubrir los rincones más mágicos del planeta. 
+                            Nos encargamos de cada detalle para que tú solo tengas que preocuparte de disfrutar. 
+                            Tu próxima gran historia empieza aquí.</p>
+                        <a href="contacto.html" class="btn btn-gold mt-3">Empieza tu Aventura</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="packages-section py-5 bg-light-lavender">
+
+            <div class="container">
+
+                <h2 class="text-center mb-5">Nuestros Paquetes Destacados</h2>
+                <div class="row g-4">
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card h-100 card-hover">
+                            <img src="img/paquete1.jpg" class="card-img-top" alt="Magia Romántica">
+                            <div class="card-body">
+                                <h5 class="card-title">Magia Romántica</h5>
+                                <p class="card-text">Descubre la belleza de Venecia y Brujas. Paseos en góndola, canales iluminados y noches mágicas bajo las estrellas.</p>
+                                <p class="price">desde 1.300€</p>
+                                <a href="contacto.html" class="btn btn-gold">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card h-100 card-hover">
+                            <img src="img/paquete2.jpg" class="card-img-top" alt="Castillos Europeos">
+                            <div class="card-body">
+                                <h5 class="card-title">Castillos Europeos</h5>
+                                <p class="card-text">Luxemburgo y Austria te esperan. Explora fortalezas antiguas, paisajes alpinos y pueblos de cuento de hadas.</p>
+                                <p class="price">desde 1.500€</p>
+                                <a href="contacto.html" class="btn btn-gold">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card h-100 card-hover">
+                            <img src="img/paquete3.jpg" class="card-img-top" alt="Atardeceres Perfectos">
+                            <div class="card-body">
+                                <h5 class="card-title">Atardeceres Perfectos</h5>
+                                <p class="card-text">Vive la experiencia de Santorini. Playas de arena negra, vinos locales y atardeceres que cambian vidas.</p>
+                                <p class="price">desde 1.200€</p>
+                                <a href="contacto.html" class="btn btn-gold">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="card h-100 card-hover">
+                            <img src="img/paquete4.jpg" class="card-img-top" alt="Aventura Medieval">
+                            <div class="card-body">
+                                <h5 class="card-title">Aventura Medieval</h5>
+                                <p class="card-text">Brujas y Austria combinadas. Arquitectura medieval, tradiciones antiguas y experiencias auténticas.</p>
+                                <p class="price">desde 1.300€</p>
+                                <a href="contacto.html" class="btn btn-gold">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="faq-section py-5">
+
+            <div class="container">
+
+                <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-12">
+                        <div class="accordion" id="accordionFAQ">
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        ¿Cuál es la mejor época para viajar?
+                                    </button>
+                                </h2>
+
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Cualquier momento es perfecto, todo depende de tus gustos y presupuesto. Contacta con nuestros expertos para recomendaciones personalizadas.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        ¿Qué documentos necesito?
+                                    </button>
+                                </h2>
+
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Para viajes dentro de Europa, necesitas un pasaporte válido. Si eres ciudadano de la UE, el DNI es suficiente. Te recomendamos comprobar los requisitos específicos de cada país con suficiente antelación. Nuestro equipo te ayudará con toda la documentación.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        ¿Incluyen vuelos y hoteles?
+                                    </button>
+                                </h2>
+
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Sí, todos nuestros paquetes incluyen vuelos internacionales, alojamiento en hoteles 4 estrellas, desayunos y tours guiados. Podemos personalizar cada paquete según tus necesidades y presupuesto.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        ¿Hay descuentos para grupos?
+                                    </button>
+                                </h2>
+
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        ¡Por supuesto! Ofrecemos descuentos especiales para grupos de 10 o más personas. Contáctanos para negociar las mejores tarifas para tu grupo.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                        ¿Se pueden personalizar los paquetes?
+                                    </button>
+                                </h2>
+
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Absolutamente. Cada viaje es único, y nosotros nos especializamos en crear experiencias a medida. Cuéntanos tus preferencias y crearemos tu itinerario perfecto.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-purple text-white py-5">
+        <div class="container">
+            <div class="row mb-4">
+
+                <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+                    <h5>Dream Trips - Agencia de Viajes</h5>
+                    <p>Cada viaje es una historia esperando ser contada.</p>
+                    <p><small><strong>Aviso Legal:</strong> Dream Trips SL. Todos los derechos reservados © 2024. Política de privacidad y términos de servicio disponibles bajo solicitud.</small></p>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white">Inicio</a></li>
+                        <li><a href="galeria.html" class="text-decoration-none text-white">Galería</a></li>
+                        <li><a href="contacto.html" class="text-decoration-none text-white">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="text-white-50">
+            <div class="row text-center">
+
+                <div class="col-12">
+                    <h5 class="mb-3">Síguenos</h5>
+                    <a href="https://www.facebook.com" class="text-white me-3 text-decoration-none" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com" class="text-white me-3 text-decoration-none" target="_blank">Instagram</a>
+                    <a href="https://www.twitter.com" class="text-white me-3 text-decoration-none" target="_blank">Twitter</a>
+                    <a href="https://www.youtube.com" class="text-white text-decoration-none" target="_blank">YouTube</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
