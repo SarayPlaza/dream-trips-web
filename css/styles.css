@@ -413,3 +413,7 @@ footer hr {
         height: 300px !important;
     }
 }
+
+.invalid-feedback.show {
+display: block;
+}
