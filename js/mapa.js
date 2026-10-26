@@ -1,36 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let latitud = 40.4193;
-    let longitud = -3.6932;
-    let nombreUbicacion = 'Dream Trips';
+const map = L.map('map').setView([40.4193, -3.6931], 14);
 
-    
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            latitud = position.coords.latitude;
-            longitud = position.coords.longitude;
-            nombreUbicacion = 'Tu ubicación';
-            inicializarMapa(latitud, longitud, nombreUbicacion);
-        }, function(error) {
-            console.log('Error al obtener la geolocalización, usando ubicación por defecto:', error);
-            inicializarMapa(latitud, longitud, nombreUbicacion);
-        });
-    } else {
-        inicializarMapa(latitud, longitud, nombreUbicacion);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// TIENDA (Cibeles, Madrid como ejemplo)
+const tiendaLatLng = [40.4193, -3.6931];
+L.marker(tiendaLatLng).addTo(map)
+  .bindPopup("<b>Dream Trips</b><br>Plaza de Cibeles, 1, 28014 Madrid")
+  .openPopup();
+
+// USUARIO
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const userLatLng = [pos.coords.latitude, pos.coords.longitude];
+      L.marker(userLatLng).addTo(map)
+        .bindPopup("Tu ubicación");
+    },
+    () => {
+      console.log("No se pudo obtener tu ubicación.");
     }
-});
-
-function inicializarMapa(lat, lng, nombre) {
-    // Crear el mapa
-    const mapa = L.map('map').setView([lat, lng], 13);
-
-    // Agregamos las capas de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
-        maxZoom: 19
-    }).addTo(mapa);
-
-    // Agregar un marcador
-    L.marker([lat, lng]).addTo(mapa)
-        .bindPopup(`<strong>${nombre}</strong><br>Ven a visitarnos.`)
-        .openPopup();
+  );
 }
